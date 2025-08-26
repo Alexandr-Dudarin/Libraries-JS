@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+  }
+
+  button {
+    background: rgb(6, 26, 53);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.7s;
+    margin: 10px 0 0 0;
+  }
+  
+  button:hover {
+    background: rgb(89, 5, 126);
+  }
+
+  input {
+    display: block;
+    margin: 10px 0 10px 0;
+  }
+
+  span {
+    background-color: #7D6420;
+    color: #FAFFFE;
+    border-radius: 5px;
+    padding: 2px;
+  }
+
+  p{
+margin: 30 px 0 10px 0;
+  }
+
+  #changeLanguage {
+    background: #002E02;
+    margin: 30px 0 0 10px;
+  }
+
+  #changeLanguage:hover {
+    background: rgb(255, 55, 0);
+  }
+
+  #Enter {
+    background: #1345CF;
+  }
+
+  #Enter:hover{
+    background: rgb(89, 5, 126);
+  }
+
+  #bigForm {
+    margin: 30px 0 0 0;
+  }

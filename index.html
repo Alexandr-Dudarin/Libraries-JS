@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <form method="post" action="/login">
+
+<label>
+
+  <span id="enterLogin">Введите логин:</span>
+
+  <input 
+  type="email"
+  name="login"
+  placeholder="Ваша почта"  
+  minlength="5"
+  />
+</label>
+
+<label>
+
+  <span id="password">Пароль:</span>
+
+  <input 
+  type="password"
+  name="password"
+  placeholder="Введите пароль"  
+  minlength="5"
+  maxlength="10"
+  />
+</label>
+
+<button id="Enter" type="submit">
+Войти
+</button>
+</form>
+
+<form id="bigForm" method="post" action="/login">
+
+<p>Для регистрации заполните поля ниже:</p>
+
+<label>
+
+  <span>Введите логин:</span>
+
+  <input 
+  type="text"
+  name="login"
+  placeholder="Ваш никнейм"  
+  minlength="5"
+  maxlength="10"
+  />
+</label>
+
+<label>
+
+  <span>Введите email:</span>
+
+  <input 
+  type="email"
+  name="login"
+  placeholder="Ваша почта"  
+  minlength="5"
+  />
+</label>
+
+<label>
+
+  <span>Пароль:</span>
+
+  <input 
+  type="password"
+  name="password"
+  placeholder="Введите пароль"  
+  minlength="5"
+  maxlength="10"
+  />
+</label>
+
+<label>
+
+  <span>Подтвердите пароль:</span>
+
+  <input 
+  type="password"
+  name="password"
+  placeholder="Введите пароль ещё раз"  
+  minlength="5"
+  maxlength="10"
+  />
+</label>
+
+<label>
+
+  <span>Дата рождения:</span>
+
+  <input 
+  type="date"
+  name="date"
+  placeholder="date"  
+  />
+</label>
+
+<label>
+
+  <span>Загрузите ваш аватар:</span>
+
+  <input 
+  type="file"
+  name="avatar"
+  placeholder="date"  
+  />
+</label>
+
+<button type="submit">
+  Зарегестрироваться
+  </button>
+</form>
+
+<button id="changeLanguage">Смена языка</button>
+
+<script src="https://unpkg.com/i18next@25.4.2/dist/umd/i18next.min.js"></script>
+
+<script>
+
+i18next.init({
+  lng: 'ru',
+  debug: true,
+  resources: {
+    ru: {
+      translation: {
+        enterLogin: "Введите логин",
+        changeLanguage: "Смена языка"
+      }
+    },
+     en: {
+      translation: {
+        enterLogin: "Enter login",
+        changeLanguage: "Change language"
+      }
+    }
+  }
+}, function(err, t) {
+  document.getElementById('enterLogin').innerHTML = i18next.t('enterLogin');
+    document.getElementById('changeLanguage').innerHTML = i18next.t('changeLanguage');
+});
+const changeLanguage = document.getElementById('changeLanguage');
+changeLanguage.onclick = () => {
+    const lang = i18next.language === "ru" ? "en" : "ru";
+    i18next.changeLanguage(lang, (err, t) => {
+  if (err) 
+  {
+    return console.log('something went wrong loading', err);
+}
+  document.getElementById('enterLogin').innerHTML = t('enterLogin');
+  document.getElementById('changeLanguage').innerHTML = t('changeLanguage');
+});
+}
+
+</script>
+
+    </body>
+</html>
