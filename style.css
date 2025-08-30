@@ -41,11 +41,11 @@ margin: 30 px 0 10px 0;
     background: rgb(255, 55, 0);
   }
 
-  #Enter {
+  #enter {
     background: #1345CF;
   }
 
-  #Enter:hover{
+  #enter:hover{
     background: rgb(89, 5, 126);
   }
 

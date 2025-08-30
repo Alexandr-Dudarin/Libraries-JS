@@ -36,18 +36,18 @@
   />
 </label>
 
-<button id="Enter" type="submit">
+<button id="enter" type="submit">
 Войти
 </button>
 </form>
 
 <form id="bigForm" method="post" action="/login">
 
-<p>Для регистрации заполните поля ниже:</p>
+<p id="paragraph">Для регистрации заполните поля ниже:</p>
 
 <label>
 
-  <span>Введите логин:</span>
+  <span id="enterLoginRegistr">Введите логин:</span>
 
   <input 
   type="text"
@@ -60,7 +60,7 @@
 
 <label>
 
-  <span>Введите email:</span>
+  <span id="enterEmail">Введите email:</span>
 
   <input 
   type="email"
@@ -72,7 +72,7 @@
 
 <label>
 
-  <span>Пароль:</span>
+  <span id="passwordRegistr">Пароль:</span>
 
   <input 
   type="password"
@@ -85,7 +85,7 @@
 
 <label>
 
-  <span>Подтвердите пароль:</span>
+  <span id="passwordConfirm">Подтвердите пароль:</span>
 
   <input 
   type="password"
@@ -98,7 +98,7 @@
 
 <label>
 
-  <span>Дата рождения:</span>
+  <span id="dateBirth">Дата рождения:</span>
 
   <input 
   type="date"
@@ -109,7 +109,7 @@
 
 <label>
 
-  <span>Загрузите ваш аватар:</span>
+  <span id="avatarUpload">Загрузите ваш аватар:</span>
 
   <input 
   type="file"
@@ -118,7 +118,7 @@
   />
 </label>
 
-<button type="submit">
+<button id="buttonRegistr" type="submit">
   Зарегестрироваться
   </button>
 </form>
@@ -135,20 +135,50 @@ i18next.init({
   resources: {
     ru: {
       translation: {
-        enterLogin: "Введите логин",
-        changeLanguage: "Смена языка"
+        changeLanguage: "Смена языка",
+        enterLogin: "Введите логин:",
+        password: "Пароль:",
+        enter: "Войти",
+        paragraph: "Для регистрации заполните поля ниже:",
+        enterLoginRegistr: "Введите логин:",
+        enterEmail: "Введите email:",
+        passwordRegistr: "Пароль:",
+        passwordConfirm: "Подтвердите пароль:",
+        dateBirth: "Дата рождения:",
+        avatarUpload: "Загрузите ваш аватар:",
+        buttonRegistr: "Зарегестрироваться"
       }
     },
      en: {
       translation: {
-        enterLogin: "Enter login",
-        changeLanguage: "Change language"
+        changeLanguage: "Change language",
+        enterLogin: "Enter login:",
+        password: "Password:",
+        enter: "Enter",
+        paragraph: "To register, fill in the fields below:",
+        enterLoginRegistr: "Enter login:",
+        enterEmail: "Enter email:",
+        passwordRegistr: "Password:",
+        passwordConfirm: "Confirm your password:",
+        dateBirth: "Date of birth:",
+        avatarUpload: "Upload your avatar:",
+        buttonRegistr: "Register"
       }
     }
   }
 }, function(err, t) {
-  document.getElementById('enterLogin').innerHTML = i18next.t('enterLogin');
-    document.getElementById('changeLanguage').innerHTML = i18next.t('changeLanguage');
+document.getElementById('changeLanguage').innerHTML = i18next.t('changeLanguage');
+    document.getElementById('enterLogin').innerHTML = i18next.t('enterLogin');
+    document.getElementById('password').innerHTML = i18next.t('password');
+    document.getElementById('enter').innerHTML = i18next.t('enter');
+    document.getElementById('paragraph').innerHTML = i18next.t('paragraph');
+    document.getElementById('enterLoginRegistr').innerHTML = i18next.t('enterLoginRegistr');
+    document.getElementById('enterEmail').innerHTML = i18next.t('enterEmail');
+    document.getElementById('passwordRegistr').innerHTML = i18next.t('passwordRegistr');
+    document.getElementById('passwordConfirm').innerHTML = i18next.t('passwordConfirm');
+    document.getElementById('dateBirth').innerHTML = i18next.t('dateBirth');
+    document.getElementById('avatarUpload').innerHTML = i18next.t('avatarUpload');
+    document.getElementById('buttonRegistr').innerHTML = i18next.t('buttonRegistr');
 });
 const changeLanguage = document.getElementById('changeLanguage');
 changeLanguage.onclick = () => {
@@ -158,8 +188,18 @@ changeLanguage.onclick = () => {
   {
     return console.log('something went wrong loading', err);
 }
+document.getElementById('changeLanguage').innerHTML = t('changeLanguage');  
   document.getElementById('enterLogin').innerHTML = t('enterLogin');
-  document.getElementById('changeLanguage').innerHTML = t('changeLanguage');
+  document.getElementById('password').innerHTML = t('password');
+  document.getElementById('enter').innerHTML = t('enter');
+  document.getElementById('paragraph').innerHTML = t('paragraph');
+  document.getElementById('enterLoginRegistr').innerHTML = t('enterLoginRegistr');
+  document.getElementById('enterEmail').innerHTML = t('enterEmail');
+  document.getElementById('passwordRegistr').innerHTML = t('passwordRegistr');
+  document.getElementById('passwordConfirm').innerHTML = t('passwordConfirm');
+  document.getElementById('dateBirth').innerHTML = t('dateBirth');
+  document.getElementById('avatarUpload').innerHTML = t('avatarUpload');
+  document.getElementById('buttonRegistr').innerHTML = t('buttonRegistr');
 });
 }
 
