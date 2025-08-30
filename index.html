@@ -9,6 +9,8 @@
   </head>
   <body>
 
+    <script type="module" src="./index.js"></script>
+
     <form method="post" action="/login">
 
 <label>
@@ -127,73 +129,6 @@
 
 <script src="https://unpkg.com/i18next@25.4.2/dist/umd/i18next.min.js"></script>
 
-<script>
-
-    const changeLanguage = document.getElementById('changeLanguage');
-
-    const output = (err, t) => {
-      if (err) {
-    return console.log('something went wrong loading', err);
-}
-  changeLanguage.innerHTML = t('changeLanguage');  
-  document.getElementById('enterLogin').innerHTML = t('enterLogin');
-  document.getElementById('password').innerHTML = t('password');
-  document.getElementById('enter').innerHTML = t('enter');
-  document.getElementById('paragraph').innerHTML = t('paragraph');
-  document.getElementById('enterLoginRegistr').innerHTML = t('enterLoginRegistr');
-  document.getElementById('enterEmail').innerHTML = t('enterEmail');
-  document.getElementById('passwordRegistr').innerHTML = t('passwordRegistr');
-  document.getElementById('passwordConfirm').innerHTML = t('passwordConfirm');
-  document.getElementById('dateBirth').innerHTML = t('dateBirth');
-  document.getElementById('avatarUpload').innerHTML = t('avatarUpload');
-  document.getElementById('buttonRegistr').innerHTML = t('buttonRegistr');
-}
-
-i18next.init({
-  lng: 'ru',
-  debug: true,
-  resources: {
-    ru: {
-      translation: {
-        changeLanguage: "Смена языка",
-        enterLogin: "Введите логин:",
-        password: "Пароль:",
-        enter: "Войти",
-        paragraph: "Для регистрации заполните поля ниже:",
-        enterLoginRegistr: "Введите логин:",
-        enterEmail: "Введите email:",
-        passwordRegistr: "Пароль:",
-        passwordConfirm: "Подтвердите пароль:",
-        dateBirth: "Дата рождения:",
-        avatarUpload: "Загрузите ваш аватар:",
-        buttonRegistr: "Зарегестрироваться"
-      }
-    },
-     en: {
-      translation: {
-        changeLanguage: "Change language",
-        enterLogin: "Enter login:",
-        password: "Password:",
-        enter: "Enter",
-        paragraph: "To register, fill in the fields below:",
-        enterLoginRegistr: "Enter login:",
-        enterEmail: "Enter email:",
-        passwordRegistr: "Password:",
-        passwordConfirm: "Confirm your password:",
-        dateBirth: "Date of birth:",
-        avatarUpload: "Upload your avatar:",
-        buttonRegistr: "Register"
-      }
-    }
-  }
-}, output
-);
-changeLanguage.onclick = () => {
-    const lang = i18next.language === "ru" ? "en" : "ru";
-    i18next.changeLanguage(lang, output);
-}
-
-</script>
 
     </body>
 </html>
