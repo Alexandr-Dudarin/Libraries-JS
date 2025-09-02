@@ -52,3 +52,8 @@ margin: 30 px 0 10px 0;
   #bigForm {
     margin: 30px 0 0 0;
   }
+
+  #nameError{
+    color: red; 
+    display: inline;
+  }

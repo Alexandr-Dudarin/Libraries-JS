@@ -98,6 +98,20 @@
 
 <label>
 
+  <span id="enterName">Введите ФИО:</span>
+
+  <input id="fullName"
+  type="text"
+  name="name"
+  placeholder="Ваше ФИО"  
+  minlength="5"
+  maxlength="60"
+  />
+  <span id="nameError"></span>
+</label>
+
+<label>
+
   <span id="dateBirth">Дата рождения:</span>
 
   <input 
@@ -144,6 +158,7 @@
   document.getElementById('enterEmail').innerHTML = t('enterEmail');
   document.getElementById('passwordRegistr').innerHTML = t('passwordRegistr');
   document.getElementById('passwordConfirm').innerHTML = t('passwordConfirm');
+  document.getElementById('enterName').innerHTML = t('enterName');
   document.getElementById('dateBirth').innerHTML = t('dateBirth');
   document.getElementById('avatarUpload').innerHTML = t('avatarUpload');
   document.getElementById('buttonRegistr').innerHTML = t('buttonRegistr');
@@ -164,6 +179,7 @@ i18next.init({
         enterEmail: "Введите email:",
         passwordRegistr: "Пароль:",
         passwordConfirm: "Подтвердите пароль:",
+        enterName: "Введите ФИО",
         dateBirth: "Дата рождения:",
         avatarUpload: "Загрузите ваш аватар:",
         buttonRegistr: "Зарегестрироваться"
@@ -180,6 +196,7 @@ i18next.init({
         enterEmail: "Enter email:",
         passwordRegistr: "Password:",
         passwordConfirm: "Confirm your password:",
+        enterName: "Enter full name",
         dateBirth: "Date of birth:",
         avatarUpload: "Upload your avatar:",
         buttonRegistr: "Register"
@@ -192,6 +209,22 @@ changeLanguage.onclick = () => {
     const lang = i18next.language === "ru" ? "en" : "ru";
     i18next.changeLanguage(lang, output);
 }
+
+const fullNameInput = document.getElementById('fullName');
+const nameErrorSpan = document.getElementById('nameError');
+
+fullNameInput.addEventListener('blur', function() {
+  const fullNameRegex = /^[а-яё\s-]*$/i;
+
+  if (!fullNameRegex.test(this.value.trim())) {
+    nameErrorSpan.textContent = 'Данное поле может содержать только кириллицу, пробелы и дефис.';
+  } else if (this.value.trim().length === 0) {
+    nameErrorSpan.textContent = 'Поле не может быть пустым.';
+  }
+  else {
+    nameErrorSpan.style.display = 'none';
+  }
+});
 
 </script>
 
