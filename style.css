@@ -55,5 +55,12 @@ margin: 30 px 0 10px 0;
 
   #nameError{
     color: red; 
-    display: inline;
+    display: block;
+    background-color: #ffffff;
+  }
+
+  #emailError{
+    color: red; 
+    display: block;
+    background-color: #ffffff;
   }
