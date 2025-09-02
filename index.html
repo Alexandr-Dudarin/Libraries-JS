@@ -226,6 +226,17 @@ fullNameInput.addEventListener('blur', function() {
   }
 });
 
+function isValidEmail(email) {
+  const emailRegex = /^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+console.log(isValidEmail("stitel23@mail.ru"));
+console.log(isValidEmail("stitel23ggga1f2h45523@mail.ru.com"));
+console.log(isValidEmail("stitel23*@mail.ru"));
+console.log(isValidEmail("stitel23@mail.r"));
+console.log(isValidEmail("stitel23@mail"));
+
 </script>
 
     </body>
